@@ -250,6 +250,8 @@ public final class UserConnection implements ProxiedPlayer
 
     public void connect(ServerInfo info, final Callback<Boolean> callback, final boolean retry, ServerConnectEvent.Reason reason)
     {
+        System.out.println(ProxyServer.getInstance().getServers().toString());
+        if(info == null) for(ServerInfo i : ProxyServer.getInstance().getServers().values()) if (i!=null && i.getName().toLowerCase().startsWith("hub")){ info = i; break;};
         Preconditions.checkNotNull( info, "info" );
 
         ServerConnectRequest.Builder builder = ServerConnectRequest.builder().retry( retry ).reason( reason ).target( info );
@@ -299,7 +301,7 @@ public final class UserConnection implements ProxiedPlayer
                 callback.done( ServerConnectRequest.Result.ALREADY_CONNECTED, null );
             }
 
-            sendMessage( bungee.getTranslation( "already_connected" ) );
+            //sendMessage( bungee.getTranslation( "already_connected" ) );
             return;
         }
         if ( pendingConnects.contains( target ) )

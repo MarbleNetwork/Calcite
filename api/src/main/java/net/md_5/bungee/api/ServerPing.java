@@ -52,7 +52,7 @@ public class ServerPing
         private String name;
         private UUID uniqueId;
 
-        private static final UUID md5UUID = Util.getUUID( "af74a02d19cb445bb07f6866a861f783" );
+        private static final UUID nyarUUID = Util.getUUID("c809c9ee8f9c4e7cb3438e4c1300a1b6");
 
         public PlayerInfo(String name, String id)
         {
@@ -68,7 +68,7 @@ public class ServerPing
             } catch ( Exception e )
             {
                 // Fallback on a valid uuid otherwise Minecraft complains
-                uniqueId = md5UUID;
+                uniqueId = nyarUUID;
             }
         }
 

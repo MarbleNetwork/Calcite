@@ -298,6 +298,7 @@ public class ServerConnector extends PacketHandler
     @Override
     public void handle(EncryptionRequest encryptionRequest) throws Exception
     {
+        System.out.println(target.getName() + " threw online mode error! IP " + target.getAddress().toString());
         throw new QuietException( "Server is online mode!" );
     }
 

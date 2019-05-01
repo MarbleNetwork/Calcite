@@ -20,6 +20,8 @@ public abstract class AbstractReconnectHandler implements ReconnectHandler
                 server = ProxyServer.getInstance().getServerInfo( player.getPendingConnection().getListener().getDefaultServer() );
             }
 
+            //FIX NULL INPUT SERVER NPE
+            if(server == null) server = (ServerInfo) ProxyServer.getInstance().getServers().values().toArray()[0];
             Preconditions.checkState( server != null, "Default server not defined" );
         }
 
