@@ -6,20 +6,19 @@
     <parent>
         <groupId>net.md-5</groupId>
         <artifactId>bungeecord-parent</artifactId>
-        <version>1.14-SNAPSHOT</version>
+        <version>1.14</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>net.md-5</groupId>
     <artifactId>bungeecord-bootstrap</artifactId>
-    <version>1.14-SNAPSHOT</version>
+    <version>1.14</version>
     <packaging>jar</packaging>
 
     <name>BungeeCord-Bootstrap</name>
     <description>Java 1.6 loader for BungeeCord</description>
 
     <properties>
-        <maven.deploy.skip>true</maven.deploy.skip>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
         <maven.build.timestamp.format>yyyyMMdd</maven.build.timestamp.format>
