@@ -13,7 +13,7 @@ jobs:
       provider: releases
       api_key:
         secure: NybHkfwrG9NIqgW0b9Hj9q0PN1GzKjcSj7+AUq6vGDUkRIfl1UuYypdjQ8L5wuJH0aPz+HBnl8LMHLjAedpSQTLygwniazK8ejreeykHTT048y2g1MWxbcPNZno3K/7HS1icKrT8PP67xxvUXb7zh9yDDkFZF25v7OdF2iKlbXl1RXtulPQoIPANqWvDUvxhxgSTSTlBW8zFhRqcoa7+eZb+p+wG6Wgac/QdpQ0xpIiZOJGT/YFe9C4KL95kBZST/dCYt7a9HkAQ7Jjt32gKFzyILWDbRnSNtuXuRlFkZ+i64zIekndtYOrv9TOJw594fj92ZhmyFDZL0W0NW0d4OnLbVJmJBxE8DT9T8VoyGE3wXllHeiOMdEjTuS1W+f3YR1m6/fS/pXHVlWJK9qhwbZYgI8VEmyuUbpuCkBqX9KJoFPmpCOyl9TuCMRBoTo5Xg77G+uHFapgda3krd6fRgaJk7yFrC5ZxSZ+3KcjW2TQ70nsVAP9bRuoptfg6jyI3YIpZSIopbuj/98FY9/FF1wzQwkPvJ2nSL7psbCxAR1bi17aQqiCyo62yJZOUbc96q5LDI/2Un4I24y0d/sWOUXbtM8GkE7JsPLIiqOcBnLAlmFz3V3NsqCK4WtG5GzvwTPU84fetLFYGo+GKFDyPIScqERMXt3YHyZgPMKnQoeU=
-      file: bootstrap/target/BungeeCord.jar
+      file: bootstrap/target/Calcite.jar
       skip_cleanup: true
       on:
         tags: true
