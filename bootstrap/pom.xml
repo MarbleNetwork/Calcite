@@ -34,7 +34,7 @@
     </dependencies>
 
     <build>
-        <finalName>BungeeCord</finalName>
+        <finalName>Calcite</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
