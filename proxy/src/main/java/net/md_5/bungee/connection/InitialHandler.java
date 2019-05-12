@@ -22,6 +22,7 @@ import net.md_5.bungee.api.AbstractReconnectHandler;
 import net.md_5.bungee.api.Callback;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.Favicon;
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.ServerPing;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -529,12 +530,21 @@ public class InitialHandler extends PacketHandler implements PendingConnection
                             {
                                 server = AbstractReconnectHandler.getForcedHost( InitialHandler.this );
                             }
-                            if ( server == null )
-                            {
-                                server = bungee.getServerInfo( listener.getDefaultServer() );
+
+                            if(server == null) {
+                                //Attempt to grab any hub available
+                                for(ServerInfo i : ProxyServer.getInstance().getServers().values()) {
+                                    if (i != null && i.getName().toLowerCase().startsWith("hub")){
+                                        server = i;
+                                        break;
+                                    }
+                                }
+                                //Disconnect as last resort if no hubs available
+                                if(server == null) userCon.disconnect("There are no hubs available right now, please try again later.");
                             }
 
-                            userCon.connect( server, null, true, ServerConnectEvent.Reason.JOIN_PROXY );
+                            //Hub found, connect to hub
+                            if(server != null) userCon.connect( server, null, true, ServerConnectEvent.Reason.JOIN_PROXY );
 
                             thisState = State.FINISHED;
                         }
